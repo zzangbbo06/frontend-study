@@ -73,7 +73,7 @@ git commit -m "로그인 기능 추가"
 backup 이라는 별칭으로 아래 원격 저장소를 연결하는 명령어를 작성해 보세요.
 https://github.com/abcdef/study_backup.git
 
-git remote add origin https://github.com/abcdef/study_backup.git
+git remote add backup https://github.com/abcdef/study_backup.git
 
 
 11.
