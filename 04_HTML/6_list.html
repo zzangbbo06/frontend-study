@@ -4,6 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!-- CSS를 Html 안에서 -->
+  <style>
+    html {
+      /* 스크롤 이동을 부드럽게 */
+      /* 직접적인 속도 조절은 CSS로는 불가능, JS로 직접 짜야함 */
+      scroll-behavior: smooth;
+    }
+    span {
+    color : purple;
+  }
+  div{
+    color: red;
+    background-color: blue;
+  }
+  </style>
+
+
 </head>
 <body>
   <!-- list 요소는 주로 메뉴나 탭 목록 등 목록을 만들 때 쓰임 -->
@@ -53,6 +71,73 @@
      </ul>
      <!-- Quiz : 서브 메뉴 2-2 밑에 하위 메뉴 2개 더 추가 -->
 
+     <!-- anchor(인라인) : 닻, 페이지를 이동하는 하이퍼 링크를 지정(닻을 내리는 것) -->
+      <!-- taget 속성은 링크된 페이지를 어디에 표시할지 타겟 지정
+      _self : 현재 탭(기본값) 
+      _blank : 새로운 탭
+      -->
+     <a href="https://www.naver.com">NAVER</a>
+     <a href="https://www.google.com" target="_blank">Google</a>
+
+     <!-- 임시태그 : # -->
+      <!-- 아무것도 넣지 않으면 새로고침 -->
+      <a href="#">임시 태그</a>
+     <!-- 해당 #id 영역으로 이동 -->
+      <a href="#intro">Intro</a>
+      <a href="#guide">Guide</a>
+
+        <!-- span(인라인) : 글자 영역 구분을 위해 사용(주로 글자에 스타일 적용할 때) -->
+        <p>
+          <span>동해물</span>과 백두산이 마르고 닳도록
+        </p>
+        <!-- span을 div로 바꾸기 -->
+         <!-- div는 글자를 다루는데 적합하지 않음 -->
+        <p>
+          <div>동해물</div>과 백두산이 마르고 닳도록
+        </p>
+
+        <!-- break(인라인) : 줄바꿈 -->
+         <!-- HTML에서 엔터키로 줄바꿈 하는 것은 공백 1개로 처리됨 -->
+         <p>
+           동해물과 백두산이
+           
+           마르고 닳도록
+          </p>
+          
+          <p>
+            동해물과 백두산이
+            <br>
+            마르고 닳도록
+          </p>
+          
+          <!-- <br>은 글자에서 한줄바꿈용도, 상자와 상자의 사이에는 여백 태그 사용 -->
+           <!-- (참고) HTML 특수문자(HTML Entities) 
+           대표적으로 &lt; &gt; &nbsp, &copy; 등 -->
+           <!-- 사용 예1: HTML에서 공백 처리 -->
+           <p>
+            동해물과 백두산이&nbsp;&nbsp;마르고 닳도록
+           </p>
+           <!-- 사용예2 : <div>를 태그가 아닌 그냥 출력하고 싶다면 -->
+          &lt;div&gt;
+          <!-- less than, great than -->
+           <!-- 사용예3 : copyright -->
+            <p>
+              &copy; All Rights Reserved.
+        
+            </p>
+
+      <!-- 임시 태그 이동 테스트 -->
+       <h2 id = "intro">Intro</h2>
+       <p style="height: 300px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, velit magni aspernatur aperiam repellendus vitae, expedita ad quis unde temporibus nostrum repellat eligendi voluptas at sunt aliquid officiis adipisci inventore?</p>
+        <p style="height: 300px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ea itaque omnis, reiciendis culpa alias debitis error ipsa vero aliquam quo exercitationem similique voluptas quisquam dolore asperiores? Tempore, error eaque!</p>
+        <p style="height: 300px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic provident molestiae odit cumque natus suscipit fuga. Tenetur assumenda, debitis aperiam natus itaque reprehenderit ea facilis expedita dignissimos corrupti, provident pariatur.</p>
+        
+    
+       <h2 id="guide">Guide</h2>
+       <p style="height: 300px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, velit magni aspernatur aperiam repellendus vitae, expedita ad quis unde temporibus nostrum repellat eligendi voluptas at sunt aliquid officiis adipisci inventore?</p>
+        <p style="height: 300px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ea itaque omnis, reiciendis culpa alias debitis error ipsa vero aliquam quo exercitationem similique voluptas quisquam dolore asperiores? Tempore, error eaque!</p>
+        <p style="height: 300px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic provident molestiae odit cumque natus suscipit fuga. Tenetur assumenda, debitis aperiam natus itaque reprehenderit ea facilis expedita dignissimos corrupti, provident pariatur.</p>
+       
 
 </body>
 </html>
