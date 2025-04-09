@@ -10,7 +10,7 @@
       /* cell간에 경계를 합치는 속성 */
       border-collapse: collapse;
     }
-    td{
+    td,th{
       /* 선(테두리): 두께 종류 색상 */
       border: 1px solid black;
       /* 안쪽 여백 넣기 */
@@ -39,5 +39,101 @@
     </table>
     <!-- table > tbody > tr로 선택을 해야만 CSS적용 가능 -->
      <!-- table tr 해도 가능 -->
+      
+     <hr>
+
+     <!-- thead, tbody, tfoot, th -->
+      <table>
+        <!-- table head : 머리글 행은 이 안에 -->
+         <thead>
+          <tr>
+            <!-- table header : 타이틀(제목) -->
+             <th>HEAD 1</th>
+             <th>HEAD 2</th>
+             <th>HEAD 3</th>
+          </tr>
+         </thead>
+        <!-- table body : 본문 행은 이 안에 -->
+         <tbody>
+          <tr>
+            <td>사람1</td>
+            <td>사람2</td>
+            <td>사람3</td>
+          </tr><tr>
+            <td>고니</td>
+            <td>피터</td>
+            <td>앨리스</td>
+          </tr><tr>
+            <td>16</td>
+            <td>25</td>
+            <td>36</td>
+          </tr>
+         </tbody>
+        <!-- table footer : 바닥글 행은 이 안에 -->
+         <tfoot>
+          <tr>
+            <td>END 1</td>
+            <td>END 2</td>
+            <td>END 3</td>
+          </tr>
+         </tfoot>  
+      </table>
+
+      <hr>
+
+      <!-- colspan(열), rowspan(행): 셀 병합(merge)
+            시작하는쪽에다가 적기 
+      -->
+       <table>
+        <tr>
+          <td colspan="2">1</td>
+          <!-- <td>2</td> -->
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td rowspan="2">6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <!-- <td>9</td> -->
+        </tr>
+       </table>
+        
+       
+       <hr>
+
+       <!-- Quiz 셀 병합 -->
+        <table>
+          <tr>
+            <td>1</td>
+            <td colspan="2">2</td>
+            <!-- <td>3</td> -->
+            <td>4</td>
+          </tr>
+          <tr>
+            <td rowspan="3">5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <!-- <td>9</td> -->
+            <td>10</td>
+            <td rowspan="2" colspan="2">11</td>
+            <!-- <td>12</td> -->
+          </tr>
+          <tr>
+            <!-- <td>13</td> -->
+            <td>14</td>
+            <!-- <td>15</td> -->
+            <!-- <td>16</td> -->
+          </tr>
+        </table>
+        <!-- TODO : 나중에 완성할것! -->
+        <!-- FIXME : 고쳐줘! -->
+        <!-- BUG: 버그 발견 -->
 </body>
 </html>
