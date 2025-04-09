@@ -66,6 +66,7 @@
         <input type="checkbox" id="banana">
         <label for="banana">Banana</label> 
 
+
         <!-- 
     label 사용 이점(웹 접근성과 관련)
     1. 매우 작은 영역(예: 확인란)을 클릭하는 데 어려움이 있는 사용자
@@ -169,6 +170,10 @@
   <hr>
 
   <!-- 셀렉트 박스(콤보 박스)  -->
+   <!-- 속성
+      value : 서버로 전송되는 선택한 항목의 실제값
+      selected : 항목을 미리 선택 
+   -->
    <label for="cars">차량 선택:</label>
    <select id="cars">
     <option value="">선택</option>
@@ -176,5 +181,46 @@
     <option value="benz">Benz</option>
     <option value="audi">Audi</option>
    </select>
+
+   <hr>
+
+  <!-- 여러 줄 입력 -->
+  <!-- cols 열, rows 행 -->
+  <!-- id는 중복되면 안된다 -->
+    <p>
+      <label for="multi">여러 줄 텍스트 입력:</label>
+    </p>
+    <textarea id="multi" cols="30" rows="6"></textarea>
+    <br>
+    <!-- 글자에 빨간색 안뜨게해줌 -->
+    <textarea id="multi" cols="30" rows="6" spellcheck="false"></textarea>
+    <br> 
+    <!-- 사용자가 사이즈 조절할 수 없도록 -->
+    <textarea id="multi" cols="30" rows="6" style="resize: none;"></textarea>
+
+    <hr>
+
+    <!-- form(동기식) : 사용자가 작성한 내용을 서버로 전송, 어떤 서버 경로로, 
+                어떤 방식(GET(url을 담아서 보냄, 검색엔진에서 검색결과, 길이에 제한),POST(url X, 개인정보))으로 전달할지 설정 
+    -->
+    <!-- 동기식 : 사용자가 요청후에 응답이 올때까지 기다려야함
+         비동기식: 사용자가 요청후에 응답이 오지 않더라도 작동
+    -->
+    <form action="/login" method="get">
+      <input type="text" name="id"><br>
+      <input type="password" name="pw">
+      <button type="submit">로그인</button>
+    </form>
+
+    <hr>
+
+    <form action="/login" method="post">
+      <input type="text" name="id"><br>
+      <input type="password" name="pw">
+      <button type="submit">로그인</button>
+    </form>
+
+
+
 </body>
 </html>
