@@ -42,9 +42,27 @@
 
     /* 5. 일반 형제 선택자 : 다음 형제 요소 "모두"를 선택 */
     /* 사용 빈도는 낮지만 간혹 다음 형제 요소들 중에 특정 요소를 고를 때 유용 */
-    .orange ~ .apple{
+    /* .orange ~ .apple{
       color: pink;
+    } */
+
+    /* Tip! input, button이 반복되는 경우 그 사이를 떨어뜨릴 때 */
+    input{
+      /* 강제로 inline요소를 block으로 바꾸기 (수평->수직) */
+      display: block;
     }
+
+    /* input만 쓰게 되면 젤 위에것도 위쪽에 margin이 생김 but input + input -> 맨위에것을 제외하고 가능 */
+    input + input {
+      margin-top: 10px;
+    }
+
+    button + button{
+      margin-left: 10px;
+    }
+
+
+
   </style>
 </head>
 <body>
@@ -67,5 +85,17 @@
     <li>망고</li>
     <li class="apple">사과</li>
   </ul>
+
+
+  <hr>
+
+  <!-- Tip! input, button이 반복되는 경우 그 사이를 떨어뜨릴 때 -->
+   <input type="text">
+   <input type="text">
+   <input type="text">
+   <br>
+   <button type="button">버튼</button>
+   <button type="button">버튼</button>
+   <button type="button">버튼</button>
 </body>
 </html>
