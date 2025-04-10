@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1. (어떠한 행동을 했을 때 동작하는) 가상 클래스 선택자 */
+    /* :hover : 마우스 커서가 올라가 있는 동안 선택 */
+  /* a:hover{
+    color: red;
+  } */
+
+  /* Quiz : 마우스 커서가 올라가면 가로 300px, 배경색 royalblue로 변경 */ 
+  /* .box:hover{
+    /* 단위 적지 않으면 적용 X */
+    /* width: 300px; */
+    /* background-color: royalblue; */
+    /* 애니메이션처럼 바꾸는 방법 -> 1초에 걸쳐서 바꿔주겠다(전환효과) */
+    /* transition: 1s; */
+  /* } */
+
+  .box{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+  }
+
+  /* :active : 마우스 클릭하고 있는 동안 선택 */
+  /* 모바일에서 :hover 대신에 꼼수로 사용 */
+  /* (공유) 버튼을 누르는 효과를 줄 때 잘 활용한 예시(보통은 버튼 색상만 변경): https://codepen.io/jooing/pen/jOMybXY */
+  /* a:active{
+    color: lime;
+  }
+  
+  .box:active{
+    width: 300px;
+    background-color: blueviolet;
+    transition: 1s;
+  } */
+
+  /* :focus : 요소가 포커스(활성화) 되면 선택 */
+  /* HTML 대화형(interactive) 요소에 사용 가능  
+    Tab키로 확인 가능 
+    화면에서 Tab
+    예: input, a, button, label, select, textarea 등
+  */
+  /* 구글 검색: HTML 대화형 콘텐츠 mdn */
+
+  input:focus{
+    background-color: orange;
+  }
+
+  /* 2. (특정한 요소를 선택하는) 가상 클래스 선택자 */
+  /* 
+    :first-child(첫번째 자식 요소)
+    :last-child(마지막 자식 요소)
+  */
+  /* class fruits 안에 span인 첫번째 자식 */
+  /* .fruits span:first-child{
+    color: red; 
+  } */
+  /* class fruits 안에 div이면서 첫번째 자식 -> 선택이 안됨 = 첫번째 자식이 없기 때문(3번째 자식이기 때문) */
+  /* .fruits div:first-child{
+    color: red; 
+  } */
+  /* .fruits h3:last-child{
+    color: red;
+  } */
+
+/* :nth-child(n) (n번째 자식 요소) */
+/* .fruits *:nth-child(2){
+  color:red;
+} */
+/* even (짝수), odd(홀수), 2n(짝수), 2n+1(홀수) , n은 0부터 대입 */
+/* .fruits *:nth-child(even){
+  color:purple;
+} */
+/* 항상 n이 앞으로 나와야함 3-n => -n+3 */
+/* .fruits *:nth-child(n/4){
+  color: greenyellow;
+} */
+
+/* .fruits *:not(:nth-child(n+4)){
+  color: greenyellow;
+} */
+
+/* :not(s)(선택자 s를 제외) */
+/* .fruits *:not(:nth-child(n+4)){
+  color: greenyellow;
+} */
+ 
+.fruits *:not(span, h3){
+  color: greenyellow;
+}
+
+</style>
+</head>
+<body>
+  <a href="https://www.naver.com">NAVER</a>
+
+  <div class="box"></div>
+
+  <input type="text">
+
+  <br><br><br>
+  <hr>
+
+  <div class="fruits">
+    <span>딸기</span>
+    <span>수박</span>
+    <div>오렌지</div>
+    <p>망고</p>
+    <h3>사과</h3>
+  </div>
+</body>
+</html>
