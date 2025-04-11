@@ -159,7 +159,6 @@
       /* 가로/세로 계산에 padding과 border 값도 포함해서 자동으로 content 영역이 줄어든다 */
       /* 요소에 padding과 border값이 추가될 때 지정한 크기보다 커지는 것을 방지 */
       box-sizing: border-box;
-      
     }
 
 
@@ -228,3 +227,89 @@
   
 </body>
 </html>
+
+
+
+
+
+<!-- (정리) Quiz
+  Q1: width와 height 속성의 역할은?
+  A1: 가로와 세로 조절
+   S: 가로 너비와 세로 높이     
+
+  Q2: width와 height 속성의 기본값은?
+  A2: 콘텐츠 크기에 맞게 조절 
+   S: auto(블록 요소와 인라인 요소에 따라 auto 값의 특성이 달라진다는 것이 중요) 
+   인라인은 콘텐츠에 맞게 블록은 가로는 부모에 맞게 세로는 콘텐츠에 맞게
+
+  Q3: max-width와 max-height 속성의 기본값은?
+  A3: 최대 너비 제한 없음
+   S: none(최대치 제한 없음)
+
+  Q4: min-width와 min-height 속성의 기본값은?
+  A4: 최소 너비 제한 없음 = 0 
+   S: 0(최소치 제한 없음), 0에는 따로 단위를 붙일 필요가 없음
+
+  Q5: em 단위의 기준은?
+  A5: 자기 자신의 글꼴의 크기와 같음(상대적임)
+   S: 해당 요소의 글꼴 크기
+
+  Q6: 0px과 0vw 중 더 큰 값은?
+  A6: 둘다 0 
+   S: 모두 같은 값 (0em, 0rem, 0px, 0vw = 0) -> 굳이 단위 붙일 필요가 없음
+
+  Q7: margin 속성의 역할은?
+  A7: 요소의 외부 공간을 지정
+   S: 요소의 외부(바깥) 여백
+
+  Q8: margin: 40px 30px 20px;
+      위 코드에서 30px은 어느 방향을 의미하는가?
+  A8: 좌우
+   S: left right
+
+  Q9: margin: 20px 10px;
+      위 코드에서 20px은 어느 방향을 의미하는가?
+  A9: 상하
+   S: 상하
+
+  Q10: padding 속성의 역할은?
+  A10: 요소의 내부 공간을 지정
+    S: 요소의 내부(안쪽) 여백
+
+  Q11: padding: 20px 10px 40px 30px;
+      위 코드에서 30px은 어느 방향을 의미하는가?
+  A11: 좌
+    S: left
+
+  Q12: padding 속성의 특징은?
+  A12: padding의 크기가 커질수록 요소의 크기도 커짐
+    S: 여백이 추가된 만큼 요소의 크기가 늘어남
+
+  
+  Q13: border 속성의 특징은?
+  A13: border의 크기가 커질수록 요소의 크기도 커짐
+    S: 여백이 추가된 만큼 요소의 크기가 늘어남 
+
+  Q14: 두께 2px, 종류 실선, 색상 빨강의 테두리 선을 코드로 작성하시오!
+  A14: border : 2px solid red;
+    S: border : 2px solid red;
+
+  Q15: 요소의 모서리를 둥글게 깎기 위한 속성은?
+  A15: border-radius
+    S: border-radius
+
+  Q16: width: 100px; padding: 20px; border: 1px solid red;
+      위 코드가 지정된 요소의 실제 가로 너비는?
+  A16: 142px
+    S: 142px
+
+  Q17: width: 100px; padding: 20px; border: 1px solid red; box-sizing: border-box;
+      위 코드가 지정된 요소의 실제 가로 너비는?
+  A17: 100px
+    S: 100px
+
+  Q18: box-sizing 속성의 기본값은?
+  A18: 요소의 내용으로 기본값
+    S: content-box
+
+-->
