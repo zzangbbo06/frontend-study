@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .menu{
+      /* list style 초기화 */
+      list-style: none;
+      display: flex;
+    }
+
+    li{
+      position: relative;
+    }
+
+    .menu li+li::before{
+      content: "";
+      display: block;
+      width: 1px;
+      height: 12px;
+      background-color: black;
+      /* 수직 정렬 */
+      /* 부모에 position이 있어야함 before에 부모가 li */
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    .menu li a{
+      text-decoration: none;
+      color: #656565;
+      padding: 0 15px;
+          /* 상하 좌우 */
+    }
+    .menu li a:hover{
+      text-decoration: underline;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tip! 메뉴 항복 사이에 세로바 넣기 -->
+  <ul class="menu">
+    <li><a href="#">회사소개</a></li>
+    <li><a href="#">인재채용</a></li>
+    <li><a href="#">제휴제안</a></li>
+    <li><a href="#">이용약관</a></li>
+    <li><a href="#">고객센터</a></li>
+  </ul>
+</body>
+</html>
