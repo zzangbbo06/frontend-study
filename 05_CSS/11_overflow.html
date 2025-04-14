@@ -14,20 +14,21 @@
       padding: 20px;
 
       /* 내용이 넘친 요소(부모 영역)에 명시 -> overflow는 부모쪽에 적어야함 */
+      /* 부모쪽에 적으면 자식쪽에 적용 */
       /* overflow: visible; */
 
       /* 넘친 내용을 잘라냄(숨김) */
-      /* overflow: hidden; */
+      overflow: hidden;
 
       /* 무조건 스크롤바 생성(잘 안씀) */
-      overflow: scroll;
+      /* overflow: scroll; */
 
       /* 넘친 내용이 있을 경우에만 스크롤바 생성 */
-      overflow: auto;
+      /* overflow: auto; */
 
       /* x축(왼), y축(오) 개별 지정 */
       /* overflow: hidden scroll; */
-      overflow-x: auto;
+      /* overflow-x: auto; */
 
       
     }
