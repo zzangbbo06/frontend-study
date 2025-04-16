@@ -121,6 +121,10 @@
   div{
     padding-bottom: 20px;
   } 
+  #check{
+    vertical-align: middle;
+    /* 수평선을 기준으로 중앙으로 맞춰줌/ 보통 사진과 글씨를 가운데에 맞출때 사용 */
+  }
 
 </style>
 <body>
@@ -183,6 +187,11 @@
           <div>
             <label for="check">
               <input type="checkbox" id="check">Agree</label>
+             
+              <!-- <input type="checkbox" id="check">
+              <label for="check">Agree</label>
+              
+              이렇게 하면 박스와 글씨 사이에 약간 띄어짐이 생김-->
           </div>
           <button type="submit" class="bt">Send</button> 
         </div>
