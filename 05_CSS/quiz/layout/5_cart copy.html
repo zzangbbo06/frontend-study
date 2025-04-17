@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 공통 스타일 */
+    * {
+      box-sizing: border-box;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    img{
+      width: 50px;
+    }
+    .cart-background{
+      width: 100%;
+      /* 명시적으로 쓴것임 안써도 나옴 */
+      background-color: lightsteelblue;
+      padding: 30px;
+    }
+    .inner{
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      /* 블록 요소니깐 가운데 정렬하려면 margin 0 auto 사용 */
+    }
+    .cart-list{
+      /* table */
+      width: 100%;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    .cart-list tr{
+      border-bottom: 2px solid lightsteelblue;
+    }
+    .cart-list th, .cart-list td{
+      /* 여러개 쓸때는 쉼표로 구분 */
+      padding: 15px; 
+      /* 안에 있는 글자들이 전부 가운데 정렬 */
+      text-align: center;
+    }
+
+    .cart-list th:nth-child(2){
+      /* 의미: 다른 셀들은 최소폭을 가져가면서 해당 셀은 최대 400px까지 늘어남 */
+      width: 400px;
+    }
+    .cart-list tr td:nth-child(2){
+      text-align: left;
+    }
+    .cart-list tr:nth-child(4) td:first-child{
+      /* 자식 선택자 사용 시 주의! */
+      /* .cart-list > tbody > tr > td     
+              tbody 주의! */
+      text-align: right;
+    }
+    .btn-group{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* 부모 요소에 작성시 자식에게 적용 */
+      padding: 20px 0;
+      font-size: 20px;
+      /* outline: none; */
+    }
+    .btn{
+      background-color: orange;
+      border: none;
+      font-size: 20px;
+      /* 버튼은 상속 X, 브라우저가 주는 기본 사이즈에 밀림 */
+      /* font-size: inherit; */
+      color: #fff;
+      border-radius: 10px;
+      padding: 14px 30px;
+      outline: none;
+      cursor: pointer;
+    }
+    .btn:hover{
+      background-color: chocolate;
+    }
+    .btn:active{
+      background-color: brown;
+    }
+
+    /* ㄱㅐ발자 도구 copy copyselector 보면 몇번째 자식인지 나옴 */
+  </style>
+</head>
+<body>
+  <div class="cart-background">
+    <!-- 가운데 정렬을 위한 div -->
+    <div class="inner">
+      <h2>장바구니</h2>
+      <table class="cart-list">
+        <!-- 4행 5열 만들기 -->
+         <tr>
+          <th></th>
+          <th>ITEM</th>
+          <th>AMOUNT</th>
+          <th>PRICE</th>
+          <th>TOTAL</th>
+         </tr>
+         <tr>
+          <td>
+            <img src="./images/item1.png" alt="카메라">
+          </td>
+          <td>카메라</td>
+          <td>1</td>
+          <td>100,000</td>
+          <td>100,000</td>
+         </tr>
+         <tr>
+            <td>
+              <img src="./images/item2.png" alt="신발">
+            </td>
+            <td>신발신발신발</td>
+            <td>2</td>
+            <td>59,000</td>
+            <td>118,000</td>
+         </tr>
+         <tr>
+          <td colspan="5">주문금액 218,000원</td>
+          <!-- <td></td> -->
+          <!-- <td></td> -->
+          <!-- <td></td> -->
+          <!-- <td></td> -->
+         </tr>
+      </table>
+
+      <div class="btn-group">
+        <a href="#">계속 쇼핑하기</a>
+        <button type="button" class="btn">구매하기</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
