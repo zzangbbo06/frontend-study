@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <style>
+    button, input{
+      width: 80%;
+    
+    }
+    .login{
+      width: 100%;
+      background-color: aqua;
+    }
+    .login-container{
+      width: 80%;
+      background-color: beige;
+      margin: 0 auto;
+      text-align: center;
+      padding: 10px;
+      line-height: 40px;
+    }
+    .pw{
+      position: relative;
+    }
+    span{
+      /* display: block; */
+      background-color: transparent;
+      position: absolute;
+      top: 42%;
+      right: 2%;
+    }
+    .material-symbols-outlined{
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <div class="login-container">
+      <div class="id">
+        ID: <input type="text">
+      </div>
+      <div class="pw">
+        PW: <input type="password" name="pw">
+            <span class="material-symbols-outlined">visibility</span>
+      </div>
+      <div class="log">
+        <button type="button">로그인</button>
+      </div>
+      <div class="member">
+        <button type="button">회원가입</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
