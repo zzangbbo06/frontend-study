@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 구글 머터리얼 아이콘 -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    .btn{
+      padding: 15px 20px;
+      font-size: 20px;
+      background-color: skyblue;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-shake:hover{
+      animation: shake 3s;  
+    }
+    .btn-shake-hard:hover{
+      animation: shake-hard 0.2s infinite;
+    }
+    @keyframes shake{
+      /* 애니메이션이 진행되는 과정을 선택해서 지정 
+      0-100%
+      from(0%와 동일)
+      to(100%와 동일)
+      */
+      0%{transform: rotate(0deg);}
+      25%{transform: rotate(-8deg);}
+      50%{transform: rotate(8deg);}
+      75%{transform: rotate(-8deg);}
+      100%{transform: rotate(0deg);}
+    }
+    @keyframes shake-hard {
+      0% { transform: translate(1px, 1px) rotate(0deg); }
+      10% { transform: translate(-1px, -2px) rotate(-1deg); }
+      20% { transform: translate(-2px, 0px) rotate(1deg); }
+      30% { transform: translate(2px, 2px) rotate(0deg); }
+      40% { transform: translate(1px, -1px) rotate(1deg); }
+      50% { transform: translate(-1px, 2px) rotate(-1deg); }
+      60% { transform: translate(-2px, 1px) rotate(0deg); }
+      70% { transform: translate(2px, 1px) rotate(-1deg); }
+      80% { transform: translate(-1px, -1px) rotate(1deg); }
+      90% { transform: translate(1px, 2px) rotate(0deg); }
+      100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+    #modal{
+      width: 300px;
+      height: 200px;
+      border: 1px solid lightgray;
+      background-color: whitesmoke;
+      padding: 20px;
+    }
+    .shake-shake{
+      animation: shake-hard 0.4s;
+    }
+    .turn{
+      font-size: 100px;
+      cursor: pointer;
+      color: cornflowerblue;
+    }
+    @keyframes turn {
+      0%{transform: rotate(0deg);}
+      25%{transform: rotate(-15deg);}
+      100%{transform: rotate(45deg);}
+    }
+    .material-symbols-outlined:hover{
+      animation: turn 1s;
+    }
+    .turn:hover{
+      /* animation: turn 1s forwards; */
+      /* 애니메이션이 끝났을 때 마지막 상태 유지 */
+      /* animation-iteration-count : infinite;(무한) */
+    }
+    @keyframes spin{
+      0%{transform: rotate(-360deg);}
+      25%{transform: rotate(-180deg);}
+      50%{transform: rotate(0deg);}
+      75%{transform: rotate(180deg);}
+      100%{transform: rotate(360deg);}
+      
+    }
+    .fire{
+      color: red;
+      font-size: 100px;
+      animation: spin 1s;
+    }
+    .fire:hover{
+      animation: spin 1s infinite linear;
+      /* linear = 일정하게 돌게 해줌, 시간이 짧을수록 빨리 돌아감 , infinite 무한히 대로 돌리기 */ 
+      /* 복잡한 css나 애니메이션은 animate css 구글링*/
+    }
+
+    /* CSS @keyframes Rule: 애니메이션 코드를 설정*/
+  </style>
+</head>
+<body>
+  <h2>shake 애니메이션 만들기</h2>
+  <button type="button" class="btn btn-shake">흔들흔들</button>
+  <button type="button" class="btn btn-shake-hard">바들바들</button>
+<hr>
+  <h2>애니메이션을 이용한 창 흔들기</h2>
+  <div id="modal">
+    <label for="age">나이 : </label>
+    <input type="text" id="age">
+    <button type="button" onclick="shakeModal()">등록</button>
+  </div>
+<hr>
+  <h2>turn 애니메이션 만들기</h2>
+  <!-- icon은 글자로 인식 -->
+  <span class="material-symbols-outlined turn">
+    home
+    </span>
+
+    <hr>
+
+    <!-- Quiz:360도 무한히 회전하는 애니메이션 만들기 -->
+     <h2>spin 애니메이션 만들기</h2>
+     <span class="material-symbols-outlined fire">
+      fire_hydrant
+      </span>
+<!-- 애니메이션 라이브러리 -->
+<h1 class="animate__animated animate__bounce">An animated element</h1>
+<h1 class="animate__animated animate__hinge">An animated element</h1>
+
+  <script>
+    const modalE1 = document.querySelector('#modal')
+    // 가져와서 modalE1에 넣는것
+    const ageInputE1 = document.querySelector('#age')
+
+    function shakeModal(){
+      // 유효성 검사
+      console.log(ageInputE1.value);
+      if(ageInputE1.value === ''){
+        modalE1.classList.add('shake-shake')
+
+        setTimeout(function(){
+        modalE1.classList.remove('shake-shake')
+        }, 500); //지정한 시간 뒤에 기능을 실행
+      }
+    }
+  </script>
+</body>
+</html>
