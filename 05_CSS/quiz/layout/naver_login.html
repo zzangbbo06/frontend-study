@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <style>
+    *{
+      box-sizing: border-box;
+      /* 내 눈에 보이는 실제 크기가 내가 설정한 크기 */
+      /* 조금 더 구글링해보기 */
+    }
+
+    .form-input{
+      width: 100%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn{
+      width: 100%;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700px;
+      cursor: pointer;
+    }
+    .btn-login{
+      background-color: #09aa5c;
+      color: #ffff;
+      margin-top: 40px;
+    }
+    .btn-join{
+      background-color: white;
+      border: 1px solid#09aa5c ;
+      margin-top: 10px;
+    }
+    .login-background{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      /* 뷰포트의 높이만큼 가득 채우려면 100%가 아님을 주의 */
+      /* 100%는 부모의 100%이고 부모의 100%임 */
+      /* 높이를 주어야 align-items가 수직정렬이 된다 */
+    }
+    .login-container{
+      width: 460px;
+      border: 1px solid #e1e3e5;
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .login-container .id-box,
+    .login-container .pw-box{
+      height: 60px;
+      padding: 27px 15px 8px;
+      border: 1px solid #c5ccd2;
+      position: relative;
+    }
+    .login-container .id-box{
+      border-radius: 8px 8px 0 0;
+    }
+    .login-container .pw-box{
+      border-top: 0;
+      border-radius: 0 0 8px 8px;
+    }
+    .login-container .text-label{
+      position: absolute;
+      bottom: 18px;
+      left: 15px;
+      color: rgba(0, 0, 0, 0.5);
+      transition: 0.2s;
+    }
+    .login-container .form-input:focus ~ .text-label{
+      /* focus옆에 한칸 뛰면 형제가 아님, 형제 선택은 ~ 혹은 + 로 선택 */
+      font-size: 12px;
+      bottom: 30px;
+      /* transition을 여기에 넣으면 focus할때만 되고 풀리면서는 걸리지 않음 */
+    }
+    .login-container .icon-eye{
+      position: absolute;
+      top: 18px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-background">
+    <div class="login-container">
+      <div class="id-box">
+        <input type="text" id="id" class="form-input">
+        <label for="id" class="text-label">아이디 또는 전화번호</label>
+        <!-- input 하나 당 label 하나 -->
+      </div>
+      <div class="pw-box">
+        <input type="text" id="pw" class="form-input">
+        <label for="pw" class="text-label">비밀번호</label>
+        <span class="material-symbols-outlined icon-eye">visibility</span>
+        <!-- 하나만 선택하기 위해서 icon-eye class 만들기 -->
+      </div>
+
+      <button type="button" class="btn btn-login">로그인</button>
+      <button type="button" class="btn btn-join">회원가입</button>
+    </div>
+  </div>
+</body>
+</html>
