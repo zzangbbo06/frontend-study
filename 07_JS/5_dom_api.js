@@ -1,3 +1,8 @@
+// DOM API는 이 DOM 구조에 **접근하고 조작할 수 있게 해주는 도구(메서드나 속성)**들의 집합
+
+
+
+
 //querySelector('CSS 선택자')
 //HTML에서 해당 요소를 검색하여 찾은 첫 번째 요소 하나만 변환
 // 요소를 차지 못하면 null을 반환
@@ -25,6 +30,16 @@ boxEl.addEventListener('click', function(){
   boxEl.classList.remove('active'); // 요소에 active라는 클래스가 있으면 제거
   hasActive = boxEl.classList.contains('active');
   console.log(hasActive);
+
+  // 토글하기
+  //예)스위치 딸깍딸깍~
+  // if(boxEl.classList.contains('on')){
+  //   boxEl.classList.remove('on');
+  // } else {
+  //   boxEl.classList.add('on');
+  // }
+  boxEl.classList.toggle('on');
+  // classList안에 toggle기능 있음
 });
 //활용 예: active라는 클래스에 미리 스타일을 지정하고 클릭한 특정 요소에 스타일을 적용할 때
 // 참고 링크
