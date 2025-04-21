@@ -161,6 +161,26 @@
   <!-- 범위 선택(기본값 0~100) -->
    <label for="volume">음량(0~10):</label>
    <input type="range" id="volume" min="0" max="10" step="2">
+   <span id="volumeValue"></span>
+
+   <script>
+    const inputV = document.querySelector('#volume');
+    const inputV2 = document.querySelector('#volumeValue');
+    // inputV2.textContent = inputV.value;
+    inputV2.innerHTML = inputV.value;
+
+    // value 값, change는 값이 정해졌을때, input 값이 변하면서 
+    // inputV.addEventListener('change', function(){
+    // if(inputV.value){
+    //   inputV2.textContent = inputV.value;
+    //   }
+    // });
+    inputV.addEventListener('input', function(){
+    if(inputV.value){
+      inputV2.textContent = inputV.value;
+      }
+    });
+   </script>
 
    <hr>
    <!-- 비밀번호 -->
