@@ -151,7 +151,7 @@ img{
 }
 .skill .skill-trees{
   width: 80%;
-  height: 400px;
+  height: 300px;
   background-color: hsla(0, 0%, 100%, .8);
   position: absolute;
   top: 0;
@@ -162,11 +162,16 @@ img{
 }
 .skill .skill-tree{
   display: flex;
-  
+}
+#skill > div > div.skill-trees > div > div > h4{
+  padding-left: 5px;
 }
 .skill .skill-tree ul{
   display: flex;
-  padding-top: 5px;
+  padding: 30px;
+}
+.skill .skill-tree ul li{
+  margin-right: 20px;
 }
 /* #skill .subtitle{
   vertical-align: middle;
@@ -216,8 +221,26 @@ img{
   font-weight: 700px;
   padding: 3px;
 }
+#skill > div > div.skill-trees > div:nth-child(3) > ul > li:nth-child(1){
+  background-color: rgb(129, 225, 97);
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 700px;
+  padding: 3px;
+}
+#skill > div > div.skill-trees > div:nth-child(3) > ul > li:nth-child(2){
+  background-color: rgb(196, 45, 153);
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 700px;
+  padding: 3px;
+}
 #skill > div > div.skill-trees > div div{
-  padding-top: 10px;
+  padding: 37px;
 }
 
 #skill > div > div.skill-trees div > div{
