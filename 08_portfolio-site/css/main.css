@@ -2,10 +2,14 @@
 *{
   box-sizing: border-box;
 }
-
+html{
+  /* 스크롤 이동을 부드럽게 */
+  scroll-behavior: smooth;
+  /* 상속은 안된다, 브라우저 전체가 html */
+}
 body{
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 16px;
+  /* 글자는 상속, 따로 주고 싶은 부분은 따로 주기 */
+  font-family: "Noto Sans KR", sans-serif;  font-size: 16px;
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
@@ -27,8 +31,64 @@ a{
   /* 고정 길이 = 고정형 */
   /* width: 1200px; */
   /* 최대값만 제한 = 반응형 */
+  /* 가운데 정렬을 위한 div에 대한 css */
   max-width: 1200px;
   margin: 0 auto;
+}
+.title{
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.title::after{
+  /* before, after는 content가 필수 */
+  content: "";
+  display: block;
+  /* 가로와 높이가 있어야 만들어짐 */
+  width: 80px;
+  height: 2px;
+  background-color: #333;
+  margin: 24px auto 0;
+}
+img {
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(baseline) 아래의 공간을 제거하기 위해 */
+  /* img는 항상 아래쪽에 약간의 공간이 있는데 baseline 이라 함 */
+  display: block;
+}
+/* 버튼과 같이 여러 곳에서 반복 사용되는 요소를 공통 스타일로 작업하면, 매번 다시 작성할 필요가 없음 */
+.btn{
+  width: 120px;
+  padding: 10px;
+  display: block; /* a, span 같은 인라인 요소를 버튼으로 사용할 수도 있으니 블록으로 지정 */
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn:hover{
+  background-color: #333;
+  color: #fff;
+}
+/* 개별 버튼 스타일 */
+.btn.btn--purple{
+  color: #9b30ff;
+  border-color: #9b30ff;
+}
+.btn.btn--purple:hover{
+  color: #fff;
+  background-color: #9b30ff;
+}
+.btn.btn--brown{
+  color: #592b18;
+  border-color: #592b18;
+}
+.btn.btn--brown:hover{
+  color: #fff;
+  background-color: #592b18;
 }
 .animate-flash{
   animation-name: flash;
@@ -120,6 +180,178 @@ header nav ul li a:hover::before{
   color: #228ce2;
 }
 
+/* ABOUT */
+.about{
+  padding: 150px 0;
+}
+.about > .inner{
+  position: relative;
+}
+.about .about__wrapper{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.about .about__wrapper .about__image{
+  width: 40%;
+}
+.about .about__wrapper .about__image img{
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about .about__wrapper .about__text{
+  width: 40%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  /* justify는 주축기준 현재는 수직 */
+  justify-content: space-evenly;
+}
+.about .about__wrapper .about__text .slogan{
+  font-size: 35px;
+  font-weight: bold;
+}
+.about .about__wrapper .about__text h3{
+  font-size: 20px;
+  font-weight: 600;
+}
+.about .about__wrapper .about__text h4{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.about .about__wrapper .about__text li{
+  line-height: 1.8;
+}
+.about .about__btn{
+  position: absolute;
+  bottom: -30px;
+  right: 30px;
+}
+/* .about .about__btn a{
+  display: flex;
+  align-items: center;
+} */
+.about .about__btn img{
+  display: inline;
+  /* 인라인요소끼리의 수직정렬 */
+  vertical-align: middle;
+  width: 28px;
+  margin-right: 10px;
+}
+
+/* SKILL */
+.skill{
+  padding: 150px 0;
+  background-color: #000;
+  color: #fff;
+}
+.skill .title::after{
+  /* content: ""; */
+  background-color: #fff;
+}
+.skill .skill__list{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+/* 하위 선택자가 아닌 자식 선택자 쓴 것에 유의!
+  하위 선택자를 쓰면 그 아래에 ul li 전부다 선택 되어짐
+*/
+.skill .skill__list > li {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  /* 방법1: position */
+  /* position: relative; */
+  /* top: 100px; */
+  /* 방법2: translate */
+
+  transform: translateY(100px);
+  opacity: 0.2;
+  transition: 1s;
+}
+/* show가 클래스에 있을때 */
+.skill.show .skill__list > li{
+  /* 방법1: position */
+  /* top: 0; */
+  /* 방법2: transform */
+  transform: translateY(0);
+  /* translateY는 아래쪽으로 가는게 양수 위로 올리는게 음수 */
+  opacity: 1;
+}
+.skill .skill__list > li:nth-child(1){transition-delay: 0.2s;}
+.skill .skill__list > li:nth-child(2){transition-delay: 0.4s;}
+.skill .skill__list > li:nth-child(3){transition-delay: 0.6s;}
+.skill .skill__list > li:nth-child(4){transition-delay: 0.8s;}
+.skill .skill__list > li:nth-child(5){transition-delay: 1s;}
+
+.skill .skill__list li div{
+  width: 50px;
+  height: 40px;
+  background-color: #9b30ff;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  transition: 0.5s;
+}
+.skill .skill__list li:hover div{
+  transform: rotate(0deg);
+}
+.skill .skill__list li div p{
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: -2px;
+}
+.skill .skill__list li h3{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+
+/* PROJECT */
+.project{
+  padding: 150px 0;
+}
+.project .port{
+  display: flex;
+  margin: 20px 0;
+}
+.project .port .port__img,
+.project .port .port__text{
+  width: 50%;
+  height: 400px;
+}
+.project .port .port__img .swiper{
+  width: 100%;
+  height: 100%;
+}
+.project .port .port__img .swiper img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* img태그에 cover와 같은 기능을 줄수있음 */
+}
+.project .port .port__text{
+  padding: 30px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.project .port .port__text h3{
+  font-size: 20px;
+  font-weight: 800;
+}
+.project .port .port__text li{
+  line-height: 1.8;
+}
+.project .port .port__text li span{
+  font-weight: bold;
+}
 
 /* 애니메이션 정의는 맨 마지막에  */
 @keyframes flash {
