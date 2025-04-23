@@ -40,3 +40,71 @@ const swiper = new Swiper('.project .swiper', { //옵션
     prevEl: '.project .swiper-button-prev',
   },
 });
+
+// 모달창 띄우기
+const modalBtn = document.querySelector('.project .btn-modal');
+const modalEl = document.querySelector('#modal');
+const closeBtn = document.querySelector('#modal .btn-close');
+
+const imageModalBtnList = document.querySelectorAll('.project .btn-modal-image');
+const imageModalEl = document.querySelector('#imageModal');
+const imageCloseBtn = document.querySelector('#imageModal .btn-close');
+const imageEl = document.querySelector('#imageModal img');
+
+// Quiz: modalBtn 누르면 모달창이 뜨고 closeBtn 누르면 닫히도록 만들기
+// style 속성: JS로 CSS 스타일을 제어할 수 있는 속성
+// 예시: modalBtn.style.
+
+modalBtn.addEventListener('click', function(){
+  // document.querySelector('#modal').style.display = 'flex';
+  modalEl.style.display = 'flex';
+});
+closeBtn.addEventListener('click', function(){
+  document.querySelector('#modal').style.display = 'none';
+});
+
+imageModalBtnList.forEach(function(imageModalBtn, index){
+  imageModalBtn.addEventListener('click', function(){
+    // imageEl.src = 'images/work_1.jpg'
+    // imageEl.src = imageModalBtn.dataset.image-src -> 작동안됨 carmel로 적어줘야함
+    imageEl.src = imageModalBtn.dataset.imageSrc;
+
+    imageModalEl.style.display = 'flex';
+  });
+});
+imageCloseBtn.addEventListener('click', function(){
+  imageModalEl.style.display = 'none';
+});
+// 추가로 더 해볼 만한 것!
+// 모달 바깥 영역 클릭 시 닫기
+// ESC 키로 닫기
+// fade 애니메이션 넣기 
+
+// 현재 연도 표시
+// 날짜 정보를 가진 JS의 Date 객체를 활용
+console.log(new Date().getFullYear());
+// 메소드이기 때문에 getFullYear에 괄호를 써줘야함
+
+const yearEl = document.querySelector('.this-year');
+yearEl.textContent = new Date().getFullYear();
+
+// 페이지 최상단으로 이동
+const toTopEl = document.querySelector('#to-top');
+
+// 페이지 스크롤 이벤트 감지를 추가!
+// window: 브라우저 창 객체 
+window.addEventListener('scroll',function(){
+  // console.log(window.scrollY); // y축 스크롤 위치
+
+  // 페이지 스크롤 위치가
+  // 500px을 넘으면 요소를 보이고,
+  // 500px을 넘지 않으면 요소 숨기기!
+  if(window.scrollY > 500){
+    toTopEl.style.opacity = '1';
+    toTopEl.style.transform = 'translateX(0px)';
+  }else{
+    toTopEl.style.opacity = '0';
+    // toTopEl.style.transform = 'translateX(100px)';
+
+  }
+});
