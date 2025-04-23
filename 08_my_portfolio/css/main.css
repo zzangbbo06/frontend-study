@@ -151,7 +151,7 @@ img{
 }
 .skill .skill-trees{
   width: 80%;
-  height: 300px;
+  height: 330px;
   background-color: hsla(0, 0%, 100%, .8);
   position: absolute;
   top: 0;
@@ -177,67 +177,67 @@ img{
   vertical-align: middle;
 } */
 #skill > div > div.skill-trees > div:nth-child(1) > ul > li:nth-child(1){
-  background-color: rgb(79, 190, 135);
-  border: 1px solid #333;
+  background-color: rgb(151, 150, 153);
+  border: 1px #333;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 20px;
   font-weight: 700px;
-  padding: 3px;
+  padding: 8px;
 }
 #skill > div > div.skill-trees > div:nth-child(1) > ul > li:nth-child(2){
   background-color: pink;
-  border: 1px solid #333;
+  border: 1px  #333;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 20px;
   font-weight: 700px;
-  padding: 3px;
+  padding: 8px;
 }
 #skill > div > div.skill-trees > div:nth-child(1) > ul > li:nth-child(3){
   background-color: rgb(235, 213, 21);
-  border: 1px solid #333;
+  border: 1px #333;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 20px;
   font-weight: 700px;
-  padding: 3px;
+  padding: 8px;
 }
 #skill > div > div.skill-trees > div:nth-child(2) > ul > li:nth-child(1){
   background-color: rgb(72, 23, 163);
-  border: 1px solid #333;
+  border: 1px #333;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 20px;
   font-weight: 700px;
-  padding: 3px;
+  padding: 8px;
 }
 #skill > div > div.skill-trees > div:nth-child(2) > ul > li:nth-child(2){
   background-color: rgb(24, 151, 109);
-  border: 1px solid #333;
+  border: 1px #333;
   color: #fff;
   border-radius: 20px;
   font-size: 20px;
   font-weight: 700px;
-  padding: 3px;
+  padding: 8px;
 }
 #skill > div > div.skill-trees > div:nth-child(3) > ul > li:nth-child(1){
   background-color: rgb(129, 225, 97);
-  border: 1px solid #333;
+  border: 1px #333;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 20px;
   font-weight: 700px;
-  padding: 3px;
+  padding: 8px;
 }
 #skill > div > div.skill-trees > div:nth-child(3) > ul > li:nth-child(2){
   background-color: rgb(196, 45, 153);
-  border: 1px solid #333;
+  border: 1px #333;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 20px;
   font-weight: 700px;
-  padding: 3px;
+  padding: 8px;
 }
 #skill > div > div.skill-trees > div div{
   padding: 37px;
