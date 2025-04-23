@@ -18,14 +18,22 @@
   <!-- 구글 제공하는 아이콘, 글자처럼 취급 가능한 장점 -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
+  <!-- swiper 연결 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- main.css -->
   <link rel="stylesheet" href="./css/main.css">
+  <!-- swiper 연결 -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- main.js -->
+  <script defer src="./js/main.js"></script>
+
 </head>
 <body>
   <header>
     <div id="header">
       <div class="inner">
           <div>
-            <h1><a href="index.html" class="port font-en">BBO'S PORTFOLIO</a></h1>
+            <h1><a href="index.html" class="font-en">BBO'S PORTFOLIO</a></h1>
           </div>
           <nav>
             <ul>
@@ -36,7 +44,7 @@
                 <a href="#skill" class="font-en">SKILL</a>
               </li>
               <li>
-                <a href="#portfolio" class="font-en">PORTFOLIO</a>
+                <a href="#project" class="font-en">PROJECT</a>
               </li>
               <li>
                 <a href="#contact" class="font-en">CONTACT</a>
@@ -50,43 +58,71 @@
   <section class="visual">
       <div class="inner">
         <h1 class="font-en">
-          <span class="">반</span>
-            <span class="">짝</span>
+          <!-- <span class="">반</span>
+          <span class="">짝</span>
             <span class="">반</span>
             <span class="">짝</span>
           &nbsp;
-            <span class="animate-rotate purple">빛</span>
+            <span class="animate-move purple">빛</span>
             <span class="animate-rotate purple">나</span>
             <span class="animate-rotate purple">는</span>
-          <br>
-            <span class="">F</span>
-            <span class="">u</span>
-            <span class="">l</span>
-            <span class="">l</span>
+          <br>-->
+          
+            <span class="animate-move" style= "animation-duration: 6.3s;">F</span> 
+            <span class="animate-move" style= "animation-duration: 6.0s">u</span>
+            <span class="animate-move" style= "animation-duration: 5.7s">l</span>
+            <span class="animate-move" style= "animation-duration: 5.4s">l</span>
           &nbsp;
-            <span class="">S</span>
-            <span class="">t</span>
-            <span class="">a</span>
-            <span class="">c</span>
-            <span class="">k</span>
+            <span class="animate-move" style="animation-duration: 5.1s;">S</span>
+            <span class="animate-move" style="animation-duration: 4.8s;">t</span>
+            <span class="animate-move" style="animation-duration: 4.5s;">a</span>
+            <span class="animate-move" style="animation-duration: 4.2s;">c</span>
+            <span class="animate-move" style="animation-duration: 3.9s;">k</span>
             &nbsp;
-            <span class="animate-rotate purple">D</span>
-            <span class="animate-rotate purple">e</span>
-            <span class="animate-rotate purple">v</span>
-            <span class="animate-rotate purple">e</span>
-            <span class="animate-rotate purple">l</span>
-            <span class="animate-rotate purple">o</span>
-            <span class="animate-rotate purple">p</span>
-            <span class="animate-rotate purple">e</span>
-            <span class="animate-rotate purple">r</span>
+            <span class="animate-move purple"style="animation-duration: 3.6s;">D</span>
+            <span class="animate-move purple"style="animation-duration: 3.3s;">e</span>
+            <span class="animate-move purple"style="animation-duration: 3.0s;">v</span>
+            <span class="animate-move purple"style="animation-duration: 2.7s;">e</span>
+            <span class="animate-move purple"style="animation-duration: 2.4s;">l</span>
+            <span class="animate-move purple"style="animation-duration: 2.1s;">o</span>
+            <span class="animate-move purple"style="animation-duration: 1.8s;">p</span>
+            <span class="animate-move purple"style="animation-duration: 1.5s;">e</span>
+            <span class="animate-move purple"style="animation-duration: 1.2s;">r</span>
             <br>
-            <span class="animate-rotate purple">장</span>
-            <span class="animate-rotate purple">보</span>
-            <span class="animate-rotate purple">영</span>
-            <span class="">입</span>
-            <span class="">니</span>
-            <span class="">다</span>
-            <span class="">.</span>
+          
+            <span class="animate-move purple"style="animation-duration: 6.3s;">장</span>
+            <span class="animate-move purple"style="animation-duration: 3.55s;">보</span>
+            <span class="animate-move purple"style="animation-duration: 1.2s;">영</span>
+          
+            <!-- <span class="animate-move">입</span>
+            <span class="animate-move">니</span>
+            <span class="animate-move">다</span>
+            <span class="animate-move">.</span> -->
+
+            <!-- <span class="animate-move" style= "animation-duration: 1.2s;">F</span>
+            <span class="animate-move" style= "animation-duration: 1.5s">u</span>
+            <span class="animate-move" style= "animation-duration: 1.8s">l</span>
+            <span class="animate-move" style= "animation-duration: 2.1s">l</span>
+          &nbsp;
+            <span class="animate-move" style="animation-duration: 2.4s;">S</span>
+            <span class="animate-move" style="animation-duration: 2.7s;">t</span>
+            <span class="animate-move" style="animation-duration: 3.0s;">a</span>
+            <span class="animate-move" style="animation-duration: 3.3s;">c</span>
+            <span class="animate-move" style="animation-duration: 3.6s;">k</span>
+            &nbsp;
+            <span class="animate-move purple"style="animation-duration: 3.9s;">D</span>
+            <span class="animate-move purple"style="animation-duration: 4.2s;">e</span>
+            <span class="animate-move purple"style="animation-duration: 4.5s;">v</span>
+            <span class="animate-move purple"style="animation-duration: 4.8s;">e</span>
+            <span class="animate-move purple"style="animation-duration: 5.2s;">l</span>
+            <span class="animate-move purple"style="animation-duration: 5.5s;">o</span>
+            <span class="animate-move purple"style="animation-duration: 5.8s;">p</span>
+            <span class="animate-move purple"style="animation-duration: 6.2s;">e</span>
+            <span class="animate-move purple"style="animation-duration: 6.5s;">r</span>
+            <br>
+            <span class="animate-move purple"style="animation-duration: 6.3s;">장</span>
+            <span class="animate-move purple"style="animation-duration: 6.0s;">보</span>
+            <span class="animate-move purple"style="animation-duration: 5.7s;">영</span> -->
         </h1>
       </div>
     </section>
@@ -153,6 +189,48 @@
         </div>
       </div>
     </div>
+    </section>
+
+    <!-- PROJECT -->
+    <section id="project" class="project font-en">
+      <div class="inner">
+        <h2 class="title">PROJECT</h2>
+        <div class="port">
+          <div class="port__img">
+          <!-- Slider main container -->
+            <div class="swiper">
+          <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./images/portfolio(1).png" alt="1">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/portfolio(2).jpg" alt="2">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/portfolio(3).png" alt="3">
+               </div>
+              </div>
+              <div class="swiper-pagination"></div>  
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="port__text">
+            <h3>나만의 포트폴리오 만들기</h3>
+            <ul>
+              <li><span>주요 기능 : </span>나만의 포트폴리오 만들기</li>
+              <li><span>적용 기술 : </span>HTML, CSS, JS</li>
+              <li><span>GitHub : </span>zzangbbo0623@gmail.com</li>
+              <li><span>URL : </span>https://bboyeong-portfolio.netlify.app/</li>
+            </ul>       
+            <div>
+            <a href="javascript:void(0)" class="btn">README</a>
+            <a href="javascript:void(0)" class="btn">이미지</a>
+            </div>
+          </div>
+        </div>
+      </div>  
     </section>
 
 </body>
