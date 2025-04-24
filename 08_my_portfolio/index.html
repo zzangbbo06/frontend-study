@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <!-- main.css -->
   <link rel="stylesheet" href="./css/main.css">
+  <!-- ScrollMagic -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- swiper 연결 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- main.js -->
@@ -149,47 +151,47 @@
   </div>`
     </section>
 
-    <section id="skill" class="skill">
-      <div class="skill-content">
-        <div class="skill-title">
+  <section id="skill" class="skill">
+    <div class="skill-content">
+      <div class="skill-title">
           
-          <h3 class="title"><span class="material-symbols-outlined">person_play</span>SKILL</h3>
-        </div>
-      <div class= "skill-trees">    
-        <div class = "skill-tree">
-          <div>
-            <span class="material-symbols-outlined">language</span>
-            <h4>Language</h4>
-          </div>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-        </div>
-        <div class = "skill-tree">
-          <div>
-            <span class="material-symbols-outlined">front_hand</span>
-            <h4>Frontend</h4>
-          </div>
-          <ul>
-            <li>React</li>
-            <li>Vue</li>
-          </ul>
-        </div>
-        <div class = "skill-tree">
-          <div>
-            <span class="material-symbols-outlined">storage</span>
-            <h4>Backend</h4>
-          </div>
-          <ul>
-            <li>Spring</li>
-            <li>Django</li>
-          </ul>
-        </div>
+        <h3 class="title"><span class="material-symbols-outlined">person_play</span>SKILL</h3>
       </div>
+    <div class= "skill-trees">    
+      <div class = "skill-tree">
+        <div>
+          <span class="material-symbols-outlined">language</span>
+          <h4>Language</h4>
+        </div>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+      <div class = "skill-tree">
+        <div>
+          <span class="material-symbols-outlined">front_hand</span>
+          <h4>Frontend</h4>
+        </div>
+        <ul>
+          <li>React</li>
+          <li>Vue</li>
+        </ul>
+      </div>
+      <div class = "skill-tree">
+        <div>
+          <span class="material-symbols-outlined">storage</span>
+          <h4>Backend</h4>
+        </div>
+        <ul>
+          <li>Spring</li>
+          <li>Django</li>
+        </ul>
+        </div>
+     </div>
     </div>
-    </section>
+  </section>
 
     <!-- PROJECT -->
     <section id="project" class="project font-en">
@@ -209,7 +211,7 @@
                 </div>
                 <div class="swiper-slide">
                   <img src="./images/portfolio(3).png" alt="3">
-               </div>
+              </div>
               </div>
               <div class="swiper-pagination"></div>  
               <div class="swiper-button-prev"></div>
@@ -222,16 +224,122 @@
               <li><span>주요 기능 : </span>나만의 포트폴리오 만들기</li>
               <li><span>적용 기술 : </span>HTML, CSS, JS</li>
               <li><span>GitHub : </span>zzangbbo0623@gmail.com</li>
-              <li><span>URL : </span>https://bboyeong-portfolio.netlify.app/</li>
+              <li><span>URL : </span><a href="https://bboyeong-portfolio.netlify.app/">bboyeong-portfolio</a></li>
             </ul>       
-            <div>
-            <a href="javascript:void(0)" class="btn">README</a>
-            <a href="javascript:void(0)" class="btn">이미지</a>
+            <div class="btn-group">
+            <a href="javascript:void(0)" class="btn btn-modal">README</a>
+            <a href="javascript:void(0)" class="btn btn-modal-image"
+            data-image-src="images/portfolio(1).png">이미지</a>
+            </div>
+          </div>
+        </div>
+        <div class="port">
+          <div class="port__img">
+          <!-- Slider main container -->
+            <div class="swiper">
+          <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./images/신짱구.png" alt="1">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/철수.jpg" alt="2">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/맹구.jpg" alt="3">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/유리.jpg" alt="3">
+                </div>
+                <div class="swiper-slide">
+                  <img src="./images/훈이.jpg" alt="3">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>  
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+          <div class="port__text">
+            <h3>짱구는 못말려</h3>
+            <ul>
+              <li><span>주요 기능 : </span>짱구,철수, 맹구, 유리, 훈이</li>
+              <li><span>적용 기술 : </span>엉덩이로 이동하기</li>
+              <li><span>GitHub : </span>떡잎마을 방법대</li>
+              <li><span>URL : </span>떡잎마을</li>
+            </ul>       
+            <div class="btn-group">
+            <a href="javascript:void(0)" class="btn btn-modal font-en">README</a>
+            <a href="javascript:void(0)" class="btn btn-modal-image">이미지</a>
             </div>
           </div>
         </div>
       </div>  
     </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact font-en scroll-spy">
+      <div class="inner">
+        <h2 class="title">CONTACT</h2>
+        <div class="contact__info">
+          <ul>
+            <li>
+              <a href="https://github.com/zzangbbo06" target="_blank">github.com/zzangbbo06</a>
+            </li>
+            <li>010-4392-2598-</li>
+            <li>jangbo0623@naver.com</li>
+          </ul>
+        </div>
+        <div class="contact__sns">
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/yxxng._.xo/" target="_blank">
+                <img src="images/icon/icon_insta.png" alt="인스타그램">
+              </a>
+            </li>
+            <li>
+              <a href="#유튜브주소" target="_blank">
+                <img src="images/icon/icon_youtube.png" alt="유튜브">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="inner">
+        <p class="copyright">
+          &copy; <span class="this-year"></span>
+          <span class="font-en">Jang BO Yeong. All Rights Reserved.</span>
+        </p>
+      </div>
+    </footer>
+      </div>
+      <!-- CONTACT -->
+ 
+    <!-- Modal -->
+    <div id="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          README
+          <span class="material-symbols-outlined btn-close">close</span>
+        </div>
+        <div class="modal-body">
+          <p>나만의 포트폴리오를 만들어서 취업하자!!</p>
+        </div>
+      </div>
+    </div>
+    <div id="imageModal">
+      <div class="imageModal-content">
+        <div class="imageModal-header">
+          이미지
+          <span class="material-symbols-outlined btn-close">close</span>
+        </div>
+        <div class="imageModal-body">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs" alt="더미데이터">
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>
