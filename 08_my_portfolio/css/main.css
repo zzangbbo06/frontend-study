@@ -45,13 +45,17 @@ li{
   /* background-repeat: no-repeat; */
   padding: 30px;
 }
+img{
+  display: block;
+}
+
+/* Header */
 
 #header > .inner{
   height: 60px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
- 
+  /* align-items: center; */
 }
 #header a{
   text-decoration: none;
@@ -68,9 +72,14 @@ li{
   font-weight: 700;
   font-size: 20px;
 }
-img{
+#header .inner .btn-hamburger{
+  display: none;
+}
+#header .inner .btn-hamburger .material-symbols-outlined{
+  font-size: 40px;
   display: block;
 }
+
 /* .animate-rotate{
   animation-name: rotate;
   animation-duration: 0.5s ;
@@ -106,49 +115,56 @@ img{
 
 /* ABOUT */
 .about{
-  padding: 150px 0;
+  padding: 120px;
+  background-color: #fbfcfd56;
+  margin: 50px;
 }
-.about > .inner{
-  /* position: relative; */
+.about .inner{
+  text-align: center;
+  border: 2px solid rgb(37, 177, 170);
+  max-width: 1400px;
 }
-.about > .inner .about__wrapper{
+.about .inner div{
+  padding: 10px;
+}
+.about .inner ul{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+  
 }
-.about .about__wrapper .about__image{
-  width: 40%;
+.about .inner ul li{
+  font-size: 35px;
+}
+.about .inner ul li span{
+  font-size: 100px;
+  vertical-align: middle;
+}
+.about .inner ul:nth-child(1) li:nth-child(1){
+  /* padding-right: 60px */
+}
+.about .inner ul:nth-child(2) li:nth-child(1){
+  /* padding-left: 60px; */
+}
+.about .inner ul:nth-child(2) li:nth-child(2){
+  /* padding-left: 50px; */
+}
+/* .about .inner ul:nth-child(1) li {
+  padding: 20px 220px 20px 0px;
 }
 
-.about .about__wrapper .about__image img{
-  height: 500px;
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
+.about .inner ul:nth-child(2) li:nth-child(1) {
+  padding-right: px;
 }
-.about .about__wrapper .about__text{
-  width: 40%;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  /* justify는 주축기준 현재는 수직 */
-  justify-content: space-evenly;
+.about .inner ul:nth-child(2) li:nth-child(2){
+  padding-right: 30px;
 }
-.about .about__wrapper .about__text .slogan{
-  font-size: 35px;
-  font-weight: bold;
-}
-.about .about__wrapper .about__text h3{
-  font-size: 20px;
-  font-weight: 600;
-}
-.about .about__wrapper .about__text h4{
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-.about .about__wrapper .about__text li{
-  line-height: 2;
-}
+.about .inner ul:nth-child(2) li:nth-child(2) span{
+  padding-right: 20px  ;
+} */
+
+
+
 
 
 
@@ -321,7 +337,7 @@ img{
   color: #fff;
 }
 /* CONTACT */
-.contact {
+/* .contact {
   padding: 200px 0;
 }
 .contact .contact__info li {
@@ -372,26 +388,25 @@ img{
 
 .contact .contact__sns ul li img {
   width: 30px;
-}
+} */
 
 /* FOOTER */
 footer{
-  background-color: #000;
+  background-color: rgb(72, 23, 163);
   color: #fff;
-}
-footer .copyright{
-  text-align: center;
-  font-weight: 600;
-  line-height: 200px;
-}
-
-footer{
-  background-color: black;
   width: 100%;
 }
 footer .inner{
   width: 100%;
+  
 }
+footer .copyright{
+  text-align: center;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+
 footer .inner p{
   color: white;
   text-align: center;
@@ -400,7 +415,7 @@ footer .inner p{
 
 
 /* Modal */
-#modal, #imageModal{
+#modal, #imageModal, #contactModal{
   background-color: rgba(3, 3, 3, 0.5);
   position: fixed;
   top: 0;
@@ -423,7 +438,8 @@ footer .inner p{
   text-align: center;
 }
 #modal .modal-header,
-#imageModal .imageModal-header{
+#imageModal .imageModal-header,
+#contactModal .contactModal-header{
   padding: 16px;
   font-weight: 700;
   background-color: rgba(18, 7, 140, 0.979) ;
@@ -434,21 +450,78 @@ footer .inner p{
   justify-content: space-between;
 }
 #modal .modal-body,
-#imageModal .imageModal-body{
+#imageModal .imageModal-body,
+#contactModal .contactModal-body{
   padding: 16px;
 }
 
 #modal .modal-header .btn-close,
-#imageModal .imageModal-header .btn-close{
+#imageModal .imageModal-header .btn-close,
+#contactModal .contactModal-header .btn-close{
   font-size: 30px;
   cursor: pointer;
 }
 #modal .modal-header .btn-close:hover,
-#imageModal .imageModal-header .btn-close:hover{
+#imageModal .imageModal-header .btn-close:hover,
+#contactModal .contactModal-header .btn-close:hover{
   color: #333;
 }
-
-
+#contactModal .contactModal-content{
+  background-color: white;
+  border-radius: 8px;
+  width: 50%;
+  height: 300px;
+  text-align: center;
+} 
+/* #contactModal .contactModal-header{
+  padding: 16px;
+  font-weight: 700;
+  background-color: rgba(18, 7, 140, 0.979) ;
+  width: 100%;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+} */
+#contactModal .contactModal-body{
+  padding: 30px;
+}
+#contactModal .contactModal-body div:first-child{
+  vertical-align: middle;
+}
+#contactModal > div > div.contactModal-body > ul:nth-child(1) > li{
+  font-size: 25px;
+}
+#contactModal > div > div.contactModal-body > ul:nth-child(1) > li span{
+  vertical-align: middle;
+}
+#contactModal > div > div.contactModal-body > ul:nth-child(2){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contactModal > div > div.contactModal-body > ul:nth-child(2) > li:nth-child(1) > a > img{
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px ;
+}
+/* SCROLL TO TOP */
+#to-top{
+  width: 60px;
+  height: 60px;
+  background-color: beige;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+  border-radius: 50%;
+  border: 2px solid rgb(201, 124, 31);
+}
 /* @keyframes rotate{
   0%{transform: scale(1.3) rotate(-20deg);}
   50%{transform: scale(1.3) rotate(20deg);}
@@ -467,4 +540,74 @@ footer .inner p{
   90%{transform: translate(-100px);} */
   100%{transform: translate(0px);}
 }
+
+/* 반응형 */
+@media screen and (max-width: 767px) {
+  .inner{
+    display: 80%;
+  }
+  .title{
+    font-size: 30px;
+    margin: 30px;
+  }
+  }
+  #header .inner .btn-hamburger{
+    display: block;
+  }
+  #header nav{
+    background-color: #fff8e8;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    margin: auto;
+    /* height: 100%; */
+    height: 0;
+    width: 100%;
+    transition: 0.3;
+    overflow: hidden;
+  }
+  #header nav ul{
+    /* ul 태그를 원래 특성인 볼록으로 원복 */
+    /* flex-direction: column; */
+    padding-top: 60px;
+    display: block;
+  }
+  #header nav ul li{
+    padding: 10px 80px;
+    font-size: 30px;
+  }
+  #header nav ul li a{
+    transition: 0.5s;
+  }
+  #header nav ul li:hover{
+    letter-spacing: 10px;
+  }
+  #header nav.active{
+    height: 100%;
+  }
   
+  .visual .inner{
+    width: 75%;
+  }
+  #about .inner{
+    display: block;
+    padding: 60px;
+  }
+  #about .inner ul:nth-child(1) li:nth-child(1){
+    padding-left: 20px;
+  }
+  #about .inner ul:nth-child(1) li:nth-child(2){
+    padding-left: 20px;
+  }
+  #about .inner ul:nth-child(2) li:nth-child(2){
+    padding-left: 50px;
+    padding-top: 50px;
+  }
+  #project .port__text li{
+    font-size: 15px;
+    padding: 1px;
+  }
+  .btn{
+    font-size: 15px;
+  }
+}

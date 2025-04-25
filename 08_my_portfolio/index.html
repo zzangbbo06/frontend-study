@@ -31,6 +31,7 @@
 
 </head>
 <body>
+  <div style="overflow-x: hidden;">
   <header>
     <div id="header">
       <div class="inner">
@@ -49,13 +50,19 @@
                 <a href="#project" class="font-en">PROJECT</a>
               </li>
               <li>
-                <a href="#contact" class="font-en">CONTACT</a>
+                <a href="#contact" class="contact-btn font-en">CONTACT</a>
               </li>
             </ul>
           </nav>
-      </div>
+          <!-- 햄버거 버튼(메튜) -->
+       <!-- 눌러도 아무 작동도 안하도록 하는것 -->
+      <a href="javascript:void(0)" class="btn-hamburger">
+        <span class="material-symbols-outlined">menu</span>
+      </a>
     </div>
+  </div>
   </header>
+     
   
   <section class="visual">
       <div class="inner">
@@ -128,28 +135,35 @@
         </h1>
       </div>
     </section>
-
+<!-- ABOUT -->
   <section id="about" class="about">
     <div class="inner">
-      <h2 class="title font-en">ABOUT</h2>
-      <div class="about__wrapper">
-        <div class="about__image">
-          <img src="./images/맹구.jpg" alt="profile">
-        </div>
-      <div class="about__text">
-        <strong class="slogan font-en">Runny nose is just a tool,,</strong>
-        <h3 class="font-en">Jang Bo Yeong</h3>
-        <div>
-          <h4 class="font-en">EDUCATION</h4>
-          <ul>
-            <li>21.03 ~ 25.02 떡잎마을방범대</li>
-            <li>25.02~ 떡잎마을유치원</li>
-        </ul>
-      </div>
+      <h2 class="title font-en">ABOUT ME</h2>
+      <div>
+      <ul class="about__first">
+        <li>
+          <span class="material-symbols-outlined">id_card</span>
+          장보영
+        </li>
+        <li>
+          <span class="material-symbols-outlined">history</span>
+          1998.06.23
+        </li>
+      </ul> 
+      <ul class="about__last">
+        <li>
+          <span class="material-symbols-outlined">location_on</span>
+          경기도 광명시
+        </li>
+        <li>
+          <span class="material-symbols-outlined">school</span>
+          한국공학대 전자공학과
+        </li>
+      </ul> 
+      <p class="slogan"></p>
     </div>
-    </div>
-  </div>`
-    </section>
+    </div>`
+   </section>
 
   <section id="skill" class="skill">
     <div class="skill-content">
@@ -278,7 +292,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="contact font-en scroll-spy">
+    <!-- <section id="contact" class="contact font-en scroll-spy">
       <div class="inner">
         <h2 class="title">CONTACT</h2>
         <div class="contact__info">
@@ -305,7 +319,7 @@
           </ul>
         </div>
       </div>
-    </section>
+    </section> -->
     <footer>
       <div class="inner">
         <p class="copyright">
@@ -315,8 +329,7 @@
       </div>
     </footer>
       </div>
-      <!-- CONTACT -->
- 
+    
     <!-- Modal -->
     <div id="modal">
       <div class="modal-content">
@@ -340,6 +353,39 @@
         </div>
       </div>
     </div>
-
+    <div id="contactModal">
+      <div class="contactModal-content">
+        <div class="contactModal-header">
+          CONTACT
+          <span class="material-symbols-outlined btn-close">close</span>
+        </div>
+        <div class="contactModal-body">
+          <ul>
+            <li>
+              <span class="material-symbols-outlined">mail</span>
+            jangbo0623@naver.com</li>
+            <li><span class="material-symbols-outlined">smartphone</span>
+            010-4392-2598</li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://github.com/zzangbbo06" target="_blank">
+                <img src="./images/github.png" alt="github">
+            </li>
+            <li>
+              <a href="https://www.instagram.com/yxxng._.xo/" target="_blank">
+                <img src="images/icon/icon_insta.png" alt="인스타그램">
+              </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- SCROLL TO TOP -->
+<div id="to-top">
+  <a href="#">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </a>
+</div>
+</div>
 </body>
 </html>
