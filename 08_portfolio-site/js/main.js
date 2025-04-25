@@ -90,6 +90,7 @@ yearEl.textContent = new Date().getFullYear();
 
 // 페이지 최상단으로 이동
 const toTopEl = document.querySelector('#to-top');
+const spanEls = document.querySelectorAll('.visual .inner .animate-flash')
 
 // 페이지 스크롤 이벤트 감지를 추가!
 // window: 브라우저 창 객체 
@@ -102,10 +103,17 @@ window.addEventListener('scroll',function(){
   if(window.scrollY > 500){
     toTopEl.style.opacity = '1';
     toTopEl.style.transform = 'translateX(0px)';
+    // visual 섹션 애니메이션 빼기
+    spanEls.forEach(function(spanEl){
+      spanEl.classList.remove('animate-flash');
+    })
   }else{
     toTopEl.style.opacity = '0';
     // toTopEl.style.transform = 'translateX(100px)';
-
+    //visual 섹션 애니메이션 넣기
+    spanEls.forEach(function(spanEl){
+      spanEl.classList.add('animate-flash');
+    })
   }
 });
 
