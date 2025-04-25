@@ -105,14 +105,14 @@ window.addEventListener('scroll',function(){
     toTopEl.style.transform = 'translateX(0px)';
     // visual 섹션 애니메이션 빼기
     spanEls.forEach(function(spanEl){
-      spanEl.classList.remove('animate-flash');
-    })
+      spanEl.classList.remove('.animate-flash');
+    });
   }else{
     toTopEl.style.opacity = '0';
     // toTopEl.style.transform = 'translateX(100px)';
     //visual 섹션 애니메이션 넣기
     spanEls.forEach(function(spanEl){
-      spanEl.classList.add('animate-flash');
+      spanEl.classList.add('.animate-flash');
     })
   }
 });

@@ -32,6 +32,7 @@ const modalBtns = document.querySelectorAll('.project .btn-modal');
 const modalEl = document.querySelector('#modal');
 const closeBtns = document.querySelectorAll('.btn-close');
 const imgEl = document.querySelector('#imageModal img');
+const contactModalEl = document.querySelector('#contactModal')
 
 modalBtns.forEach(function(modalBtn){
   modalBtn.addEventListener('click', function(){
@@ -49,6 +50,7 @@ closeBtns.forEach(function(closeBtn){
 
 const modalImageBtns = document.querySelectorAll('.project .btn-modal-image');
 const modalImageEl = document.querySelector('#imageModal');
+// const contactEl = document.querySelector('#header nav li:nth-child(4)');
 
 
 modalImageBtns.forEach(function(modalImageBtn){
@@ -64,14 +66,51 @@ closeBtns.forEach(function(closeBtn){
   })
 });
 
+const aEl = document.querySelector('#header nav ul li .contact-btn');
+  aEl.addEventListener('click',function(){
+    contactModalEl.style.display = 'flex'
+  });
+closeBtns.forEach(function(closeBtn){
+  closeBtn.addEventListener('click', function(){
+    contactModalEl.style.display = 'none';
+  });
+});
+
 const yearEl = document.querySelector('.this-year');
 yearEl.textContent = new Date().getFullYear();
 
-// window.addEventListener('scroll',function(){
-//   if(window.scrollY > 500){
-//     toTopEl.style.opacity = '1';
-//     toTopEl.style.transform = 'translateX(0px)';
-//   }else{
-//     toTopEl.style.opacity = '0';
-//   }
-// });
+const totopEl = document.querySelector('#to-top');
+const spanEls = document.querySelectorAll('.visual .inner .animate-move')
+window.addEventListener('scroll', function(){
+  if(window.scrollY > 500) {
+    totopEl.style.opacity = '1';
+    totopEl.style.transform = 'translateX(0px)';
+    spanEls.forEach(function(spanEl){
+      spanEl.classList.remove('animate-move')
+    })
+  }else{
+    totopEl.style.opacity = '0';
+    spanEls.forEach(function(spanEl){
+        spanEl.classList.add('animate-move')
+    })
+  }
+});
+
+const btnHamburger = document.querySelector('.btn-hamburger');
+const navEl = document.querySelector('header nav');
+
+btnHamburger.addEventListener('click', function(){
+  // if(navEl.classList.contains('active')){
+  //   navEl.classList.remove('active');
+  // }else{
+  //   navEl.classList.add('active')
+  // }
+  navEl.classList.toggle('active');
+})
+
+const aEls = document.querySelectorAll('header nav ul li a');
+aEls.forEach(function(aEl){
+  aEl.addEventListener('click', function(){
+    navEl.classList.remove('active');
+  })
+})

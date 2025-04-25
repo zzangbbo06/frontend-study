@@ -600,6 +600,10 @@ footer .copyright{
   #imageModal .modal-body img{
     width: 100%;
   }
+  .btn-group{
+    font-size: 10px;
+  }
+
 }
 
 
