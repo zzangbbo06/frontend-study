@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <style>
+    .menu{
+      display: flex;
+      list-style: none;
+    }
+    li{
+      position: relative;
+    }
+    .menu li + li::before{
+      content: "";
+      width: 2px;
+      height: 12px;
+      background-color: black;
+      position: absolute;
+      top: 0;      
+      bottom: 0;
+      margin: auto;
+    }
+    .menu li > a{
+      text-decoration: none;
+      color: #000;
+      padding: 0 15px;
+    }
+    .menu li a:hover{
+      color: red;
+      text-decoration: underline;
+    }
+    
+
+  </style>
+</head>
+
+
+<body>
+  <ul class="menu">
+    <li><a href="#">회사소개</a></li>
+    <li><a href="#">인재채용</a></li>
+    <li><a href="#">제휴제안</a></li>
+    <li><a href="#">이용약관</a></li>
+    <li><a href="#">고객센터</a></li>
+  </ul>
+
+</body>
+</html>
