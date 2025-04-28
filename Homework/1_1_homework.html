@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .spongebob > img{
+      width: 100px;
+      height: 100px;
+      max-width: 1000px;
+      max-height: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <div class="spongebob">
+    <h1 class="spongebob-header">자라나라 스폰지밥</h1>
+    <button type="button">+</button>
+    <img src="./images/스폰지밥.jpg" alt="스폰지밥">
+  </div>
+  <script>
+    const btn = document.querySelector('button');
+    const image = document.querySelector('.spongebob > img');
+    btn.addEventListener('click', function(){
+      // 속성변화가 아니기 때문에 width, height는 선언해줘야한다
+      const currentWidth = image.width; 
+      const currentHeight = image.height;
+      image.style.width = (currentWidth + 100) + 'px';  
+      image.style.height = (currentHeight + 100) + 'px'; 
+    })
+  </script>
+</body>
+</html>

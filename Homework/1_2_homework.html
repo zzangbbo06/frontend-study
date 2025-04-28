@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div img{
+      width: 100px;
+      height: 100px;
+      max-width: 1000px;
+      max-height: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>이미지 크기 조정</h1>
+    <p>가로: <input type="text" class="width"></p>
+    <p>세로: <input type="text" class="height"> <button type="button">변경</button></p>
+    <img src="./images/스폰지밥.jpg" alt="스펀지밥">
+  </div>
+
+  <script>
+    const width = document.querySelector('.width');
+    const height = document.querySelector('.height');
+    const image = document.querySelector('div img');
+    const btn = document.querySelector('div p button');
+
+    btn.addEventListener('click', function(){
+      const currentWidth = Number(width.value);
+      const currentHeight = Number(height.value);
+      
+      image.style.width = currentWidth + 'px'
+      image.style.height = currentHeight + 'px'
+      
+    })
+  </script>
+</body>
+</html>
