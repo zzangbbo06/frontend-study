@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 문제5
+    // 사용자로부터 세 개의 정수를 입력받아, 
+    // 그 수들의 최대값과 최소값, 합계와 평균을 구해서 브라우저에 출력하세요.
+    const n1 = Number(prompt('첫번째 정수를 입력하세요'));
+    const n2 = Number(prompt('두번째 정수를 입력하세요'));
+    const n3 = Number(prompt('세번째 정수를 입력하세요'));
+    const sum = n1 + n2 + n3;
+    const average = (n1 + n2 + n3) / 3;
+    // let max;
+    if(n1 > n2){
+      if(n1 > n3){
+        document.write(`최대값: ${n1}` , '<br>');
+        // max = n1 ; -> 최종에만 document.write(max);
+        if(n2 > n3){
+          document.write(`최솟값: ${n3}` , '<br>');
+        }else{
+          document.write(`최솟값: ${n2}` , '<br>');
+        }
+        
+      }else{
+        document.write(`최대값: ${n3}` , '<br>');
+        document.write(`최솟값: ${n2}` , '<br>');
+      }
+    }else if(n1 < n2){
+      if(n2 > n3){
+        document.write(`최대값: ${n2}` , '<br>');
+        if(n1 > n3){
+          document.write(`최솟값: ${n3}` , '<br>');
+        }else{
+          document.write(`최솟값: ${n1}` , '<br>');
+        }
+      }else{
+        document.write(`최대값: ${n3}` , '<br>');
+        document.write(`최솟값: ${n1}` , '<br>');
+      }
+    }if(n1 === n2){
+      if(n1 > n3){
+        document.write(`최대값: ${n1}` , '<br>');
+        document.write(`최솟값: ${n3}` , '<br>');
+      }else{
+        document.write(`최대값: ${n3}` , '<br>');
+        document.write(`최솟값: ${n1}` , '<br>');
+      }
+    }
+    document.write(`합계: ${sum}` , '<br>');
+    document.write(`평균: ${average}` , '<br>');
+    
+    
+    // 풀이5
+    // 주의! 덧셈을 하거나 문자끼리 비교를 피하려면 숫자로 변환해 줄 것!!
+    //'11' > '2' => false
+    //'11' > 2 => true
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
