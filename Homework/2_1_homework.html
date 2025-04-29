@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bead-circle{
+      width: 100%;
+      display: none;
+    }
+    .bead-circle div{
+      background-color: aqua;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 30px 20px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="bead">
+    <div>
+    <h1>홀수? 짝수?</h1>
+    <button type="button" class="plus-button">구슬 추가</button>
+    <button type="button" class="oddEven-button">홀짝</button>
+    <button type="button" class="reset-button">초기화</button>
+    </div>
+    <div class="bead-circle">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <!-- <div></div> -->
+    </div>
+  </div>
+  <script>
+    const plusBtn = document.querySelector('.plus-button');
+    const beadEl = document.querySelector('.bead-circle');
+    const oddEvenNumberBtn = document.querySelector('.oddEven-button');
+    const resetBtn = document.querySelector('.reset-button');
+    const beadEls = document.querySelectorAll('.bead-circle div')
+
+
+    plusBtn.addEventListener('click', function(){
+      beadEl.style.display = 'flex';
+    });
+    resetBtn.addEventListener('click', function(){
+      beadEl.style.display = 'none';
+    });
+      oddEvenNumberBtn.addEventListener('click', function(){
+        beadEls.forEach(function(beadEl){
+        const beadElsNumber = beadEls.length;
+        console.log(beadEls.length);
+        // beadEls에 Nodelist 개수
+        if(beadElsNumber % 2 === 1){
+          alert('홀수')
+        }else{
+          alert('짝수')
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="calculator">
+    <h1>계산기</h1>
+    
+    <p>첫번째값 : <input type="text" class="firstInput"></p>
+    <p>두번째값 : <input type="text" class="secondInput"></p>
+    <button class="plus">+</button>
+    <button class="minus">-</button>
+    <button class="multiply">X</button>
+    <button class="share">/</button>
+    <button class="remain">%</button>
+    <hr>
+    <span>계산결과:</span>
+  </div>
+  <script>
+    const firstText = document.querySelector('.firstInput');
+    const secondText = document.querySelector('.secondInput');
+    const btns = document.querySelectorAll('.calculator button'); 
+    const resultEl = document.querySelector('span');
+    
+    btns.forEach(function(btn,index){
+      btn.addEventListener('click', function(){
+      const firstValue = Number(firstText.value);
+      // console.log(typeof firstValue); => 문자열
+      const secondValue = Number(secondText.value);
+      let result = "";
+
+      // index 혹은 classList.contain으로 해서 쓰기
+      if(index === 0){
+        result = firstValue + secondValue;
+      }else if(index === 1){
+        result = firstValue - secondValue;
+      }else if(index === 2){
+        result = firstValue * secondValue;
+      }else if(index === 3){
+        result = firstValue / secondValue;
+      }else if(index === 4){
+        result = firstValue % secondValue;
+      };
+
+      resultEl.textContent = `계산결과는: ${result}`;
+    });
+  });
+  </script>
+</body>
+</html>
