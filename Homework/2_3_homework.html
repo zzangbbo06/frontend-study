@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .letter-cumulative input{
+      display: inline-block;
+      margin-right: 10px
+    }
+    .letter-cumulative div{
+      margin-top: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="letter-cumulative">
+    <h1>문자 누적하기</h1>
+    <input type="text"><button type="button" class="letter-cumulative-button">누적</button>
+    <div>
+    <textarea id="letter-cumulative-textarea"></textarea>
+    </div>
+  </div>
+  <script>
+    const inputText = document.querySelector('.letter-cumulative input');
+    const btn = document.querySelector('.letter-cumulative-button');
+    const textArea = document.querySelector('#letter-cumulative-textarea');
+
+    btn.addEventListener('click', function(){
+        if(inputText.value){
+          textArea.value += inputText.value; /*(textArea.value ? ' ': '' ) + */ input.value;
+          // 기존값에다가 추가할때 
+          // textArea.value = textArea.value + inputText.value;
+        }
+    });
+
+  </script>
+</body>
+</html>
