@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="weather">
+    <h1>날씨 확인</h1>
+    <div class="seasons">
+      계절 <input type="radio" class="season" name="season" value="봄">봄
+      <input type="radio" class="season" name="season" value="여름">여름
+      <input type="radio" class="season" name="season" value="가을">가을
+      <input type="radio" class="season" name="season" value="겨울">겨울
+    </div>
+      <p>
+        기온 <input type="text">
+      </p>
+      <button type="button" class="checkbtn" >확인</button>
+
+    <script>
+      // const seasonsEl = document.querySelectorAll('.seasons input').value;
+      // const tempEl = document.querySelector('p input');
+      // const checkBtn = document.querySelector('.checkbtn');
+
+
+      
+const seasonEls = document.querySelectorAll('.season');
+const checkBtn = document.querySelector('.checkbtn');
+const tempEl = document.querySelector('p input');
+
+checkBtn.addEventListener('click', function(){
+  seasonEls.forEach(function(seasonEl, index){
+    if (seasonEl.checked) {
+      if(index === 0){
+        alert(`계절은 ${seasonEl.value}이고 기온은 ${tempEl.value}도 입니다`); 
+      } else if(index === 1){
+        if(tempEl.value >= 35){
+        alert('폭염 경보!!!' + ' 기온은 ' + tempEl.value + '도 입니다');
+        }else if(tempEl.value >= 33 && tempEl.value < 35){
+        alert('폭염 주의보!!' + ' 기온은 ' + tempEl.value + '도 입니다');
+        }else{
+        alert(`계절은 ${seasonEl.value}이고 기온은 ${tempEl.value}도 입니다`);
+        }
+      } else if(index === 2){
+        alert(`계절은 ${seasonEl.value}이고 기온은 ${tempEl.value}도 입니다`);
+      } else if(index === 3){
+        if(tempEl.value <= -15){
+        alert('한파 경보!!!'+ ' 기온은 ' + tempEl.value + '도 입니다');
+        }else if(tempEl.value > -15  && tempEl.value <= -12){
+        alert('한파 주의보!!' + ' 기온은 ' + tempEl.value + '도 입니다');
+        }else{
+        alert(`계절은 ${seasonEl.value}이고 기온은 ${tempEl.value}도 입니다`);
+        }
+      }
+    }
+  });
+});
+
+
+//       const seasonEls = document.querySelectorAll('.season');
+//       const checkBtn = document.querySelector('.checkbtn');
+
+// checkBtn.addEventListener('click', function () {
+//   let selectedValue = '';
+
+//   seasonEls.forEach(function (seasonEl) {
+//     if (seasonEl.checked) {
+//       selectedValue = seasonEl.value;
+//     }
+//   });
+
+//   if (selectedValue) {
+//     alert(selectedValue); // "봄", "여름", "가을", "겨울" 중 선택된 값 출력
+//   } else {
+//     alert("계절을 선택해주세요.");
+//   }
+// });
+
+      // function season(){
+      //   const seasonsEl = document.querySelector('input[name="season"]:checked').value;
+      //   if(seasonsEl){
+          
+      //   }
+      // }
+    </script>
+  </div>
+</body>
+</html>
