@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .character-img img{
+      width: 200px;
+      height: 200px;
+      border: 2px solid greenyellow ;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="selectPlay">
+    <h1>스폰지밥, 뚱이, 징징이</h1>
+    <select name="spongebob-friend" id="spongebob-character">
+      <option value="spongebob">스펀지밥</option>
+      <option value="ttongi">뚱이</option>
+      <option value="jingjingi">징징이</option>
+    </select>
+    <div class="character-img">
+      <img src="./images/sponge.png" alt="캐릭터">
+      
+    </div>
+  </div>
+  <script>
+    const selectBox = document.querySelector('#spongebob-character');
+    const characterImg = document.querySelector('.character-img img');
+    
+
+    selectBox.addEventListener('change', function () {
+      const selectedValue = selectBox.value;
+
+      if (selectedValue === 'spongebob') {
+        characterImg.src = './images/sponge.png';
+      } else if (selectedValue === 'ttongi') {
+        characterImg.src = './images/dung.png'; // 예시 이미지 경로
+      } else if (selectedValue === 'jingjingi') {
+        characterImg.src = './images/human.png'; // 예시 이미지 경로
+      }
+    });
+  </script>
+</body>
+</html>
