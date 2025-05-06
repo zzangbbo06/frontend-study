@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>행 열 개수 각각 입력받아 테이블 만들기</h1>
+  <button type="button" onclick="createTable()">테이블 생성</button>
+  <div class="table-area">
+    <!-- 표가 들어갈 자리 -->
+  </div>
+
+  <script>
+    // 2번
+  const row = Number(prompt('행의 개수는?'));
+  const column = Number(prompt('열의 개수는?')); 
+
+  const tableList = document.querySelector('.table-area');
+  const tableBtn = document.querySelector('button');
+
+  function createTable() {
+    let num = 1;
+    let html = '<table border="1">';
+
+    for (let i = 1; i <= row; i++) {
+      html += '<tr>';
+      for (let j = 1; j <= column; j++) {
+        html += `<td>${num++}</td>`;
+      }
+      html += '</tr>';
+    }
+
+    html += '</table>';
+
+    // 테이블을 .table-area 안에 삽입
+    tableList.innerHTML = html;
+    // innerHTML은 html태그안에 있는것을 해석해서 입력
+    // textContent는 안에 있는 태그가 아닌 글만 읽어서 출력
+  }
+
+
+// -> 이게 더 깔끔 !
+
+  // const row = Number(prompt('행의 개수는?'));
+  // const column = Number(prompt('열의 개수는?')); 
+
+  // const tableList = document.querySelector('.table-area');
+  // const tableBtn = document.querySelector('button');
+
+  // function createTable(){
+  //   let num = 1;
+  //   const createRow = document.createElement('tr');
+  //   const createColumn = document.createElement('td');
+  //   const tableBorder = document.createElement('table');
+  //   tableBorder.setAttribute('border', '1');
+
+    
+  //   for(let i = 1; i <= row; i++){
+  //     const createRow = document.createElement('tr');
+  //     for(let j = 1; j<=column; j++){
+  //       const createColumn = document.createElement('td');
+  //       createColumn.textContent = num++;
+  //       createRow.appendChild(createColumn);
+  //     }
+  //     tableBorder.appendChild(createRow);
+  //   }
+  //   tableList.appendChild(tableBorder);
+  // }
+  </script>
+</body>
+</html>
