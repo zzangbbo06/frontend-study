@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 3번 -->
+  <h1>귤농장</h1>
+  <button type="button" onclick="getOrange()">체험시작</button>
+  <div class="basket" style="display: flex; flex-wrap: wrap; " >
+    <!-- 귤이 들어갈 자리 -->
+    <!-- <p class="finish-message" style="display: none;">
+    체험 끝!!!!!!!!!!!!!!!!!
+    </p> -->
+  </div>
+  <p class="finish-message" style="display: none;">
+    체험 끝!!!!!!!!!!!!
+  </p>
+
+  <script>
+    // 3번
+  const orangeEl = Number(prompt('귤 몇g을 딸까요?'));
+  const orangeBasket = document.querySelector('.basket');
+  const finish = document.querySelector('.finish-message');
+
+  function getOrange(){
+    for(let i = 1 ; i <= (orangeEl/10); i++){
+    const createText = document.createElement('p')
+    createText.textContent = `${i*10}g`;
+    // createImg.textContent = "i*10g"
+    // 이미지에는 textContent가 들어갈수없음  
+    const createImg = document.createElement('img')
+    createImg.src = "./images/gul.png"
+    createImg.alt = "귤"
+    orangeBasket.appendChild(createText);
+    orangeBasket.appendChild(createImg);
+    }
+    finish.style.display = "block";
+  } 
+  
+  
+  </script>
+</body>
+</html>
