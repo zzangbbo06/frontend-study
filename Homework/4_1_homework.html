@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="comboset">
+    <h1>콤보 세트</h1>
+    개수: <input type="text"> 
+    <button type="button" onclick="order();">주문</button>
+    <br>
+    <p>
+  
+    </p>
+    <script>
+      const num = document.querySelector('.comboset input');
+      const btn = document.querySelector('.comboset button');
+      const image = document.querySelector('.comboset p');
+
+      function order(){
+
+        let count = Number(num.value);
+        // p태그 안을 초기화 하는방법
+        image.innerHTML = "";
+        for(let i = 1; i <= count; i++){
+          // 넣고 싶은 태그를 생성하는방법
+          const popcorn = document.createElement('img');
+          popcorn.src = "./images/popcorn.png";
+          popcorn.alt = "팝콘";
+          // 넣고 싶은 태그를 넣는 방법
+          image.appendChild(popcorn);
+
+          for(let j = 1; j <= 2; j++){
+            const coke = document.createElement('img');
+            coke.src = "./images/coke.png";
+            coke.alt = "콜라";
+            image.appendChild(coke);
+          }
+          const br = document.createElement('br');
+          image.appendChild(br);
+        }
+      }      
+    </script>
+  </div>
+</body>
+</html>
