@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 문제2
+    // 요일 보여주기
+
+    // 특정 날짜 객체를 생성하면 'SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT' 형식으로 요일을 보여주도록 만들어보세요.
+    // 2가지 방법으로 각각 구현해 볼 것!
+    // 1) 조건문(if 또는 switch)을 이용한 방법
+    // 2) 배열을 이용한 방법
+
+    // 예시:
+    // let date = new Date(2023, 0, 5); // 2023년 1월 5일
+    // "THU"가 출력되어야 합니다.
+
+    // 풀이2-1
+    const date = new Date(2023, 0, 5);
+    
+    let days;
+    switch(date.getDay()){
+      case 0:
+        days = 'SUN';
+        break;
+      case 1:
+        days = 'MON';
+        break;
+      case 2:
+        days = 'TUE';
+        break;
+      case 3:
+        days = 'WED';
+        break;
+      case 4:
+        days = 'THU';
+        break;
+      case 5:
+        days = 'FRI';
+        break;
+      case 6:
+        days = 'SAT';
+        break;
+    }
+    document.write(days, '<br>');
+    
+    // 풀이2-2
+    // const inputDate = prompt('요일이 궁금한 연도, 월, 일을 입력해주세요(ex) 2023, 1, 5)');
+    // 입력받으면 문자열 형태로 들어가기 때문에 월을 그대로 써줘야함, 숫자로 바꾸고 싶으면 하나의 과정을 더 거쳐야함
+    // const [year, month, day] = inputDate.split(',').map(x => Number(x.trim()));
+    // let date = new Date(inputDate);
+    // // document.write(date);
+    // const onlyDay = date.getDay();
+    // const dayList = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    // const label = dayList[onlyDay];
+    // document.write(label);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
