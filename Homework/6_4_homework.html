@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>랜덤 배경색</h1>
+  <button type="button" onclick="changeColor()">바꾸기</button>
+  <!-- style = "여기안에 넣게 되면 문자열이 되어버림" -->
+   <!-- 문자열로 들어가는지 숫자로 들어가는지 공부할필요가 있음
+     -->
+  <script>
+    function getRandomColor(min,max){
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    const backColor = document.querySelector('body');
+
+    function changeColor(){
+      const r = getRandomColor(0,255);
+      const g = getRandomColor(0,255);
+      const b = getRandomColor(0,255);
+      backColor.style.backgroundColor = `rgb(${r},${g},${b})`;
+    }
+    
+
+  </script>
+</body>
+</html>

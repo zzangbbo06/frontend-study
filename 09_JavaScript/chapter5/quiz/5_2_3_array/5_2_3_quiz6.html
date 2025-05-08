@@ -12,11 +12,12 @@
     // 로또 번호가 6개가 완성되면 오름차순으로 정렬까지 해서 출력해보세요.
     // while문 사용하면 조금 더 편함!
 
-    const lottoArr = [];
+  const lottoArr = [];
 
   while (lottoArr.length < 6) {
   const num = Math.floor(Math.random() * 45) + 1;
   if (lottoArr.indexOf(num) === -1) {
+    // if(!lottoArr.includes(num))
     // 배열안에 해당 값이 없다
     lottoArr.push(num);
   }
