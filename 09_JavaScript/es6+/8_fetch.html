@@ -30,6 +30,14 @@
     // body: 서버로 전송할 데이터
     // content-type 정의: 서버에 전송하는 데이터의 타입을 지정
 
+    // Content-Type 정리(HTTP POST 요청 시 주요 데이터 형식)
+    // Content-Type                      | 전송 형식 예시         | 설명
+    // application/json                  | JSON.stringify(data)  | JSON 포맷(대부분의 API가 선호함)
+    // application/x-www-form-urlencoded | key=value&key2=value2 | HTML form 방식(기본 form 전송)
+    // multipart/form-data               | FormData(파일 포함)    | 파일 업로드나 복합 데이터 전송에 사용(boundary 자동 생성됨)
+    // text/plain                        | "단순 텍스트"          | 순수 텍스트 문자열 전송. 텍스트 자체를 전달
+
+    
     // GET - id가 1인 데이터 조회
     // Promise라는 객체로 반환
     // new Promise().then();
